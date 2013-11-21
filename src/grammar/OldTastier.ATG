@@ -159,28 +159,16 @@ string generateProcedureName(string name) {
 */
 
 string getLabelForProcedureName(int lexicalLevelDifference, string name) {
-  /*
-     We want to skip <lexicalLevelDifference> labels backwards, but compose
-     a label that incorporates the names of all the enclosing procedures up
-     to that point. A lexical level difference of zero indicates a procedure
-     defined in the current scope; a difference of 1 indicates a procedure
-     defined in the enclosing scope, and so on.
-  */
-  int numOpenProcedures = openProcedureDeclarations.Count;
-  int numNamesToUse = (numOpenProcedures - lexicalLevelDifference);
+  int temp = lexicalLevelDifference; //we want to skip <lexicalLevelDifference> labels
   string theLabel = name;
 
-  /*
-    We need to concatenate the first <numNamesToUse> labels with a "$" to
-    get the name of the label we need to call.
-  */
-
-  var names = openProcedureDeclarations.Take(numNamesToUse);
-
-  foreach (string s in names) {
+  foreach (string s in openProcedureDeclarations) {
+    if (temp == 0) {
       theLabel = s + "$" + theLabel;
+    } else {
+      temp = temp - 1;
+    }
   }
-
   return theLabel;
 }
 
@@ -321,6 +309,7 @@ Factor<out TastierType type>    (.  int n; Symbol sym; string name; .)
                                         }
                                       } else SemErr("variable expected");
                                     }
+                                    Console.WriteLine("sym.Item1="+sym.Item1+" | sym.Item2="+sym.Item2+" | sym.Item3="+sym.Item3+" | sym.Item4="+sym.Item4+" | sym.Item5="+sym.Item5);
                                 .)
   | number                      (.
                                     n = Convert.ToInt32(t.val);
@@ -334,8 +323,6 @@ Factor<out TastierType type>    (.  int n; Symbol sym; string name; .)
                                       type = TastierType.Integer;
                                     }
                                     program.Add(new Instruction("", "Neg"));
-                                    program.Add(new Instruction("", "Const 1"));
-                                    program.Add(new Instruction("", "Add"));
                                 .)
   | "true"                      (.  program.Add(new Instruction("", "Const " + 1)); type = TastierType.Boolean; .)
   | "false"                     (.  program.Add(new Instruction("", "Const " + 0)); type = TastierType.Boolean; .)
@@ -356,19 +343,22 @@ MulOp<out Instruction inst>
 
 /*------------------------------------------------------------------------*/
 
-ProcDecl                        (.  string name; string label; Scope currentScope = openScopes.Peek(); int enterInstLocation = 0; bool external = false; .)
+ProcDecl                        (.  string name; Scope currentScope = openScopes.Peek(); int enterInstLocation = 0; bool external = false; .)
 = "void"
   Ident<out name>               (.
                                     currentScope.Push(new Symbol(name, (int)TastierKind.Proc, (int)TastierType.Undefined, openScopes.Count, -1));
                                     openScopes.Push(new Scope());
                                     currentScope = openScopes.Peek();
+				    Console.WriteLine("\nProcedure: Name="+name+" | TastierKind.Proc="+TastierKind.Proc+" | TastierType.Undefined="+" | "+TastierType.Undefined+" | "+openScopes.Count+" | -1");
                                 .)
   '(' ')'
   '{'                           (.
-                                    program.Add(new Instruction("", "Enter 0"));
-                                    enterInstLocation = program.Count - 1;
-                                    label = generateProcedureName(name);
+                                    enterInstLocation = program.Count;
+                                    program.Add(new Instruction(generateProcedureName(name), "Enter 0"));
                                     openProcedureDeclarations.Push(name);
+
+                                    Console.WriteLine("Instruction Location="+enterInstLocation+" | name="+name+" | Procedure Name="+generateProcedureName(name)+"\n");
+
                                     /*
                                       Enter is supposed to have as an
                                       argument the next free address on the
@@ -401,9 +391,7 @@ ProcDecl                        (.  string name; string label; Scope currentScop
                                     program.Add(new Instruction("", "Ret"));
                                     openScopes.Pop();
                                     // now we can generate the Enter instruction properly
-                                    program[enterInstLocation] =
-                                      new Instruction(label, "Enter " +
-                                                      currentScope.Count(s => s.Item2 == (int)TastierKind.Var));
+                                    program.Insert(enterInstLocation, new Instruction("", "Enter " + currentScope.Count));
                                     openProcedureDeclarations.Pop();
                                 .).
 
@@ -411,12 +399,9 @@ ProcDecl                        (.  string name; string label; Scope currentScop
 
 RelOp<out Instruction inst>
 =                               (.  inst = new Instruction("", "Equ"); .)
-  ( '='
-  | "/="                        (.  inst = new Instruction("", "Neq"); .)
+  ( "=="
   | '<'                         (.  inst = new Instruction("", "Lss"); .)
   | '>'                         (.  inst = new Instruction("", "Gtr"); .)
-  | "<="                        (.  inst = new Instruction("", "Lte"); .)
-  | ">="                        (.  inst = new Instruction("", "Gte"); .)
   ).
 
 /*------------------------------------------------------------------------*/
@@ -428,7 +413,8 @@ SimExpr<out TastierType type>   (.  TastierType type1; Instruction inst; .)
                                     if (type != TastierType.Integer || type1 != TastierType.Integer) {
                                       SemErr("integer type expected");
                                     }
-                                    program.Add(inst);
+                                    program.Add(inst); 
+				    Console.WriteLine("Instruction.Item1(Label) = " + inst.Item1 + " | Instruction.Item2(actual instruction) = " + inst.Item2);
                                 .)
   }.
 
@@ -446,7 +432,7 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                       SemErr("reference to undefined variable " + name);
                                     }
                                 .)
-  ( ":="                        (.
+  ( '='                         (.
                                     if ((TastierKind)sym.Item2 != TastierKind.Var) {
                                       SemErr("cannot assign to non-variable");
                                     }
@@ -489,20 +475,10 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                     openLabels.Push(generateLabel());
                                     program.Add(new Instruction("", "FJmp " + openLabels.Peek()));
                                 .)
-      Stat                      (.
-                                    Instruction startOfElse = new Instruction(openLabels.Pop(), "Nop");
-                                    /*
-                                       If we got into the "if", we need to
-                                       jump over the "else" so that it
-                                       doesn't get executed.
-                                    */
-                                    openLabels.Push(generateLabel());
-                                    program.Add(new Instruction("", "Jmp " + openLabels.Peek()));
-                                    program.Add(startOfElse);
-                                .)
+      Stat                      (.  program.Add(new Instruction(openLabels.Pop(), "Nop")); .)
       [ "else"
         Stat
-      ]                         (.  program.Add(new Instruction(openLabels.Pop(), "Nop")); .)
+      ]
 
 | "while"                       (.  string loopStartLabel = generateLabel();
                                     openLabels.Push(generateLabel()); //second label is for the loop end
@@ -544,6 +520,7 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                         // if the symbol is external, we also store it by name. The linker will resolve the name to an address.
                                       } else {
                                         program.Add(new Instruction("", "StoG " + (sym.Item5+3)));
+					
                                       }
                                     }
                                     else {
@@ -610,6 +587,7 @@ Term<out TastierType type>      (.  TastierType type1; Instruction inst; .)
                                       SemErr("integer type expected");
                                     }
                                     program.Add(inst);
+				    Console.WriteLine("Instruction.Item1(Label) = " + inst.Item1 + " | Instruction.Item2(actual instruction) = " + inst.Item2);
                                 .)
   }.
 
@@ -630,15 +608,19 @@ VarDecl<bool external>          (.
   Ident<out name>               (.
                                     if (external) {
                                       externalDeclarations.Push(new Symbol(name, (int)TastierKind.Var, (int)type, 0, 0));
+				      Console.WriteLine("Name="+name+" |  TastierKind.Var="+TastierKind.Var+" |  Type="+type);
                                     } else {
                                       currentScope.Push(new Symbol(name, (int)TastierKind.Var, (int)type, openScopes.Count-1, currentScope.Count(s => s.Item2 == (int)TastierKind.Var)));
+				      Console.WriteLine("Name="+name+" |  TastierKind.Var="+TastierKind.Var+" |  Type="+type);
                                     }
                                 .)
   { ',' Ident<out name>         (.
                                     if (external) {
                                       externalDeclarations.Push(new Symbol(name, (int)TastierKind.Var, (int)type, 0, 0));
+				      Console.WriteLine("Name="+name+" |  TastierKind.Var="+TastierKind.Var+" |  Type="+type);
                                     } else {
                                       currentScope.Push(new Symbol(name, (int)TastierKind.Var, (int)type, openScopes.Count-1, currentScope.Count(s => s.Item2 == (int)TastierKind.Var)));
+				      Console.WriteLine("Name="+name+" |  TastierKind.Var="+TastierKind.Var+" |  Type="+type);
                                     }
                                 .)
   } ';'.
@@ -647,7 +629,7 @@ ExternDecl                      (.  string name; bool external = true; Scope cur
 = "external"
   ( VarDecl<external>
   | "procedure" Ident<out name> ';'
-                                (.  externalDeclarations.Push(new Symbol(name, (int)TastierKind.Proc, (int)TastierType.Undefined, 1, -1)); .)
+                                (.  externalDeclarations.Push(new Symbol(name, (int)TastierKind.Proc, (int)TastierType.Undefined, 0, -1)); .)
   ) .
 
 END Tastier.

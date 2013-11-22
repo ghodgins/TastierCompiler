@@ -320,7 +320,12 @@ Factor<out TastierType type>    (.  int n; Symbol sym; string name; .)
                                             int lexicalLevelDifference = Math.Abs(openScopes.Count - sym.Item4)-1;
                                             program.Add(new Instruction("", "Load " + lexicalLevelDifference + " " + sym.Item5));
                                         }
-                                      } else SemErr("variable expected");
+                                      }else if((TastierKind)sym.Item2 == TastierKind.Constant) {
+				        program.Add(new Instruction("", "Const " + (sym.Item4)));
+					program.Add(new Instruction("", "LoadG " + (sym.Item5+3)));
+					program.Add(new Instruction("", "StoG " + (sym.Item5+3)));
+				      } 
+				      else SemErr("variable expected");
                                     }
                                 .)
   | number                      (.
@@ -561,6 +566,7 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 | "write"
   Expr<out type> ';'            (.
                                     if (type != TastierType.Integer) {
+				      Console.WriteLine("Type: "+type);
                                       SemErr("integer type expected");
                                     }
                                     program.Add(new Instruction("", "Write"));
@@ -637,12 +643,12 @@ ConstDecl                       (.
 = "const"
   Ident<out name>
   ":=" number                   (.
-                                    sym = new Symbol(name, (int)TastierKind.Constant, (int)TastierType.Integer, openScopes.Count-1, currentScope.Count(s=>s.Item2 ==
+				    n = Convert.ToInt32(t.val);
+                                    sym = new Symbol(name, (int)TastierKind.Constant, (int)TastierType.Integer, n, currentScope.Count(s => s.Item2 ==
 				    (int)TastierKind.Constant || s.Item2 == (int)TastierKind.Var));
 				    currentScope.Push(sym);
-				    n = Convert.ToInt32(t.val);
-				    program.Add(new Instruction("", "Const " + n));
-				    program.Add(new Instruction("", "StoG 0"));
+				    //program.Add(new Instruction("", "Const " + n));
+				    //program.Add(new Instruction("", "StoG 0"));
                                 .)
 
 { ',' Ident<out name>           (.

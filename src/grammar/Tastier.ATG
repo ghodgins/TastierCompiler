@@ -12,7 +12,8 @@ COMPILER Tastier
 
   enum TastierKind : int {  // kinds of symbol
     Var,
-    Proc
+    Proc,
+    Constant
   };
 
 /*
@@ -445,6 +446,11 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                     if (sym == null) {
                                       SemErr("reference to undefined variable " + name);
                                     }
+
+                                    if ((TastierKind)sym.Item2 == TastierKind.Constant) {
+                                      SemErr("cannot assign to a constant");
+                                    }
+
                                 .)
   ( ":="                        (.
                                     if ((TastierKind)sym.Item2 != TastierKind.Var) {
@@ -570,7 +576,7 @@ Tastier                         (.  string name; bool external = false; .)
                                     openScopes.Push(new Scope());
                                 .)
   '{'
-  { VarDecl<external> | ProcDecl | ExternDecl }
+  { ConstDecl | VarDecl<external> | ProcDecl | ExternDecl }
   '}'                           (.
                                     if (openScopes.Peek().Count == 0) {
                                       Warn("Warning: Program " + name + " is empty ");
@@ -578,7 +584,9 @@ Tastier                         (.  string name; bool external = false; .)
 
                                     header.Add(new Instruction("", ".names " + (externalDeclarations.Count + openScopes.Peek().Count)));
                                     foreach (Symbol s in openScopes.Peek()) {
-                                      if (s.Item2 == (int)TastierKind.Var) {
+                                      if(s.Item2 == (int)TastierKind.Constant) {
+					header.Add(new Instruction("", ".const " + ((int)s.Item3) + " " + s.Item1));
+				      }else if (s.Item2 == (int)TastierKind.Var) {
                                         header.Add(new Instruction("", ".var " + ((int)s.Item3) + " " + s.Item1));
                                       } else if (s.Item2 == (int)TastierKind.Proc) {
                                         header.Add(new Instruction("", ".proc " + s.Item1));
@@ -620,6 +628,28 @@ Type<out TastierType type>
  ( "int"                        (.  type = TastierType.Integer; .)
  | "bool"                       (.  type = TastierType.Boolean; .)
  ).
+
+/*------------------------------------------------------------------------*/
+
+ConstDecl                       (.
+                                    string name; int n; Symbol sym; Scope currentScope = openScopes.Peek();
+                                .)
+= "const"
+  Ident<out name>
+  ":=" number                   (.
+                                    sym = new Symbol(name, (int)TastierKind.Constant, (int)TastierType.Integer, openScopes.Count-1, currentScope.Count(s=>s.Item2 ==
+				    (int)TastierKind.Constant || s.Item2 == (int)TastierKind.Var));
+				    currentScope.Push(sym);
+				    n = Convert.ToInt32(t.val);
+				    program.Add(new Instruction("", "Const " + n));
+				    program.Add(new Instruction("", "StoG 0"));
+                                .)
+
+{ ',' Ident<out name>           (.
+                                   currentScope.Push(new Symbol(name, (int)TastierKind.Constant, (int)TastierType.Integer, openScopes.Count-1, currentScope.Count(s
+				   => s.Item2 == (int)TastierKind.Constant || s.Item2 == (int)TastierKind.Var)));
+				.)
+} ';' .
 
 /*------------------------------------------------------------------------*/
 

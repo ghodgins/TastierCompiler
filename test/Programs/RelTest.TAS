@@ -1,0 +1,46 @@
+// This is a test program which can be compiled by the TastierCompiler. Used for lab 5.
+// Tests all of the relational operators added for this lab.
+
+program Test {
+  int i;
+
+  void Main() {
+    read i;
+    
+    int x;
+    x := 6;
+
+    if(x = x) {
+      write x;
+      x := x-1;
+    }
+
+    if(x /= x+1) {
+      write x;
+      x := x-1;
+    }
+
+    if(x > x-1) {
+      write x;
+      x := x-1;
+    }
+
+    if(x < x+1) {
+      write x;
+      x := x-1;
+    }
+
+    if(x >= x) {
+      write x;
+      x := x-1;
+    }
+
+    if(x <= x) {
+      write x;
+      x := x-1;
+    }
+
+    write x;
+  }
+}
+

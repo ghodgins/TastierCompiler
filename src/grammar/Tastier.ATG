@@ -542,9 +542,10 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                     program.Add(new Instruction(openLabels.Pop(), "Nop")); // put the loop end label here
                                 .)
 
-| "for"                         (.  List<Instruction> temp = new List<Instruction>(); int start; .)
-  '('                
-  Stat                          (.  
+| "for"                         (.  List<Instruction> forInstructions = new List<Instruction>(); int start; .)
+  
+  '(' Ident<out name>  ":="  Expr<out type> 
+  ';'                           (.  
                                     string startLabel = generateLabel();
 				    openLabels.Push(generateLabel()); // end label
 				    program.Add(new Instruction(startLabel, "Nop"));
@@ -583,13 +584,13 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 				  }
 
 				  while (start < program.Count) {
-				    temp.Add(program[start]);
+				    forInstructions.Add(program[start]);
 				    program.RemoveAt(start);
 				  }
 			        .)
   ')'
-  '{' Stat '}'                  (.
-                                  foreach (Instruction i in temp) {
+  "do" '{' Stat '}'                  (.
+                                  foreach (Instruction i in forInstructions) {
 				    program.Add(i);
 				  }
 				  program.Add(new Instruction("", "Jmp " + startLabel));

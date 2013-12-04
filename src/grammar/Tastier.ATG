@@ -475,7 +475,23 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                       SemErr("cannot assign to non-variable");
                                     }
                                 .)
-    Expr<out type> ';'
+    Expr<out type>
+    
+    [
+    '?' SimExpr<out type>       (.
+
+                                    openLabels.Push(generateLabel());
+				    program.Add(new Instruction("", "FJmp " + openLabels.Peek()));
+
+                                .)
+    ':' SimExpr<out type>       (.
+
+                                    program.Add(new Instruction(openLabels.Pop(), "Nop"));
+
+                                .)
+    ]
+
+  ';'
                                 (.
                                     if (type != (TastierType)sym.Item3) {
                                       SemErr("incompatible types");
@@ -493,9 +509,6 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                       program.Add(new Instruction("", "Sto " + lexicalLevelDifference + " " + sym.Item5));
                                     }
                                 .)
-
-// Expression = SimpleExpression [ RelationalOperator SimpleExpression ] [ "?" Expression ":" Expression ] .
-
 
    | '(' ')' ';'              (.
                                     if ((TastierKind)sym.Item2 != TastierKind.Proc) {

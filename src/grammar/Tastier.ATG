@@ -493,7 +493,11 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                       program.Add(new Instruction("", "Sto " + lexicalLevelDifference + " " + sym.Item5));
                                     }
                                 .)
-  | '(' ')' ';'                 (.
+
+// Expression = SimpleExpression [ RelationalOperator SimpleExpression ] [ "?" Expression ":" Expression ] .
+
+
+   | '(' ')' ';'              (.
                                     if ((TastierKind)sym.Item2 != TastierKind.Proc) {
                                       SemErr("object is not a procedure");
                                     }
@@ -569,7 +573,7 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 				      SemErr("constants cannot be re-assigned");
 				    }
 				  }
-				    start = program.Count;
+				  start = program.Count;
 				.)
   Expr<out type>                (.
                                   if (type != (TastierType)sym.Item3) {

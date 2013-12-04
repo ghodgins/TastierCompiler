@@ -577,19 +577,14 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 				  }
 
 				  if (sym.Item4 == 0) {
-				    program.Add(new Instruction("", "StoG " + (sym.Item5 + 3) ));
+				    forInstructions.Add(new Instruction("", "StoG " + (sym.Item5 + 3) ));
 				  } else {
 				    int lexicalLevelDifference = Math.Abs(openScopes.Count - sym.Item4) - 1;
-				    program.Add(new Instruction("", "Sto " + lexicalLevelDifference + " " + sym.Item5));
-				  }
-
-				  while (start < program.Count) {
-				    forInstructions.Add(program[start]);
-				    program.RemoveAt(start);
+				    forInstructions.Add(new Instruction("", "Sto " + lexicalLevelDifference + " " + sym.Item5));
 				  }
 			        .)
   ')'
-  "do" '{' Stat '}'                  (.
+  "do" '{' Stat '}'             (.
                                   foreach (Instruction i in forInstructions) {
 				    program.Add(i);
 				  }

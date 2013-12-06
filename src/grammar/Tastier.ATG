@@ -478,16 +478,21 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
     Expr<out type>
     
     [
-    '?' SimExpr<out type>       (.
-
+    '?'                         (.
+                                    if (type != TastierType.Boolean) {
+                                      SemErr("boolean type expected");
+				    }
                                     openLabels.Push(generateLabel());
 				    program.Add(new Instruction("", "FJmp " + openLabels.Peek()));
-
                                 .)
+    SimExpr<out type>           (.
+                                   Instruction elseLabel = new Instruction(openLabels.Pop(), "Nop");
+				   openLabels.Push(generateLabel());
+				   program.Add(new Instruction("", "Jmp " + openLabels.Peek()));
+                                   program.Add(elseLabel);
+				.)
     ':' SimExpr<out type>       (.
-
-                                    program.Add(new Instruction(openLabels.Pop(), "Nop"));
-
+                                   program.Add(new Instruction(openLabels.Pop(), "Nop"));
                                 .)
     ]
 
@@ -559,7 +564,7 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                     program.Add(new Instruction(openLabels.Pop(), "Nop")); // put the loop end label here
                                 .)
 
-| "for"                         (.  List<Instruction> forInstructions = new List<Instruction>(); int start; .)
+| "for"                         (.  List<Instruction> forInstructions = new List<Instruction>(); .)
   
   '(' Ident<out name>  ":="  Expr<out type> 
   ';'                           (.  
@@ -586,7 +591,6 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 				      SemErr("constants cannot be re-assigned");
 				    }
 				  }
-				  start = program.Count;
 				.)
   Expr<out type>                (.
                                   if (type != (TastierType)sym.Item3) {

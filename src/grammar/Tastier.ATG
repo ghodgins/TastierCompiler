@@ -613,6 +613,19 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 				  program.Add(new Instruction(openLabels.Pop(), "Nop")); // end label
 				.)
 
+| "switch" '(' Expr<out type> ')' '{'
+    {
+      "case" Expr<out type> ':'
+        Stat
+        ["break" ';']
+    }
+    [
+      "default" ':'
+        Stat 
+        ["break" ';']
+    ]
+  '}'
+
 | "read"
   Ident<out name> ';'           (.
                                     sym = lookup(openScopes, name);

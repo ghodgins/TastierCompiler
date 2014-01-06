@@ -613,18 +613,36 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 				  program.Add(new Instruction(openLabels.Pop(), "Nop")); // end label
 				.)
 
-| "switch" '(' Expr<out type> ')' '{'
+| "switch"                      (.
+                                  int switchArgumentAddress = program.Count();
+                                .)
+   '(' 
+     Expr<out type> 
+   ')' '{'                      (.
+                                  int endOfExprInstructions = program.Count();
+                                  List<Instruction> argumentInstructions = new List<Instruction>(); // holds instructions used to load the switch argument expression
+                                  argumentInstructions = program.GetRange(switchArgumentAddress, endOfExprInstructions - switchArgumentAddress);
+                                  string switchEnd = generateLabel();                             // generates label used to skip to end of switch when a case is matched
+				.)
     {
-      "case" Expr<out type> ':'
-        Stat
-        ["break" ';']
+      "case" Expr<out type>     (.
+				  openLabels.Push(generateLabel());                             // generate label to jump to and push it to the openLabels stack
+                                  program.Add(new Instruction("", "Equ"));                      // compare case expression to switch expression 
+				  program.Add(new Instruction("", "FJmp " + openLabels.Peek()));  // jump instruction to jump to label which will be added to the correct place later
+                                .)
+      ':'  Stat                 (.
+                                  program.Add(new Instruction("", "Jmp " + switchEnd));         // jump to end of switch as the case was matched
+                                  program.Add(new Instruction(openLabels.Pop(), "Nop"));        // label to jump to if expression of this case does not match
+                                  program.AddRange(argumentInstructions);                       // adds instructions that will reload the switch argument for the next case comparison
+                                .)
     }
     [
       "default" ':'
         Stat 
-        ["break" ';']
     ]
-  '}'
+  '}'                           (.
+                                  program.Add(new Instruction(switchEnd, "Nop"));            // jump here if a case is matched in an above case
+                                .)
 
 | "read"
   Ident<out name> ';'           (.

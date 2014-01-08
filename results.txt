@@ -1,0 +1,1214 @@
+Name=i |  TastierKind.Var=Var |  Type=Integer
+
+Procedure: Name=SumUp | TastierKind.Proc=Proc | TastierType.Undefined= | Undefined | 2 | -1 | Current Scope=Tastier.Parser+Scope
+Instruction Location=0 | name=SumUp | Procedure Name=SumUp$SumUp
+
+Name=sum |  TastierKind.Var=Var |  Type=Integer
+sym.Item1=i | sym.Item2=0 | sym.Item3=1 | sym.Item4=0 | sym.Item5=0
+sym.Item1=sum | sym.Item2=0 | sym.Item3=1 | sym.Item4=1 | sym.Item5=0
+sym.Item1=i | sym.Item2=0 | sym.Item3=1 | sym.Item4=0 | sym.Item5=0
+Instruction.Item1(Label) =  | Instruction.Item2(actual instruction) = Add
+sym.Item1=i | sym.Item2=0 | sym.Item3=1 | sym.Item4=0 | sym.Item5=0
+Instruction.Item1(Label) =  | Instruction.Item2(actual instruction) = Sub
+sym.Item1=sum | sym.Item2=0 | sym.Item3=1 | sym.Item4=1 | sym.Item5=0
+
+Procedure: Name=Main | TastierKind.Proc=Proc | TastierType.Undefined= | Undefined | 2 | -1 | Current Scope=Tastier.Parser+Scope
+Instruction Location=23 | name=Main | Procedure Name=Main$Main
+
+sym.Item1=i | sym.Item2=0 | sym.Item3=1 | sym.Item4=0 | sym.Item5=0
+sym.Item1=i | sym.Item2=0 | sym.Item3=1 | sym.Item4=0 | sym.Item5=0
+sym.Item1=i | sym.Item2=0 | sym.Item3=1 | sym.Item4=0 | sym.Item5=0
+If statement: Jump to L$4
+sym.Item1=i | sym.Item2=0 | sym.Item3=1 | sym.Item4=0 | sym.Item5=0
+Else statement: Jump to L$4
+Main 1 0 1 -1
+SumUp 1 0 1 -1
+i 0 1 0 0
+rpc: 0	| rtp: 0	| rbp: 0	| Binary Call 0 26
+rpc: 26	| rtp: 2	| rbp: 0	| Unary Enter 0
+rpc: 27	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 28	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 34	| rtp: 4	| rbp: 0	| Binary Call 1 3
+rpc: 3	| rtp: 6	| rbp: 0	| Unary Enter 0
+rpc: 4	| rtp: 8	| rbp: 4	| Unary Const 0
+rpc: 5	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 11	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 12	| rtp: 9	| rbp: 4	| Unary LoadG 3
+rpc: 13	| rtp: 10	| rbp: 4	| Nullary Add
+rpc: 14	| rtp: 9	| rbp: 4	| Binary Sto 0 0
+rpc: 15	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 16	| rtp: 9	| rbp: 4	| Unary Const 1
+rpc: 17	| rtp: 10	| rbp: 4	| Nullary Sub
+rpc: 18	| rtp: 9	| rbp: 4	| Unary StoG 3
+rpc: 19	| rtp: 8	| rbp: 4	| Unary Jmp 6
+rpc: 6	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 7	| rtp: 8	| rbp: 4	| Unary LoadG 3
+rpc: 8	| rtp: 9	| rbp: 4	| Unary Const 0
+rpc: 9	| rtp: 10	| rbp: 4	| Nullary Gtr
+rpc: 10	| rtp: 9	| rbp: 4	| Unary FJmp 20
+rpc: 20	| rtp: 8	| rbp: 4	| Nullary Nop
+rpc: 21	| rtp: 8	| rbp: 4	| Binary Load 0 0
+rpc: 22	| rtp: 9	| rbp: 4	| Nullary Write
+rpc: 23	| rtp: 8	| rbp: 4	| Nullary Leave
+rpc: 24	| rtp: 5	| rbp: 0	| Nullary Ret
+rpc: 35	| rtp: 4	| rbp: 0	| Nullary Read
+rpc: 36	| rtp: 5	| rbp: 0	| Unary StoG 3
+rpc: 37	| rtp: 4	| rbp: 0	| Unary Jmp 29
+rpc: 29	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 30	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 31	| rtp: 5	| rbp: 0	| Unary Const 0
+rpc: 32	| rtp: 6	| rbp: 0	| Nullary Gtr
+rpc: 33	| rtp: 5	| rbp: 0	| Unary FJmp 38
+rpc: 38	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 39	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 40	| rtp: 5	| rbp: 0	| Unary LoadG 3
+rpc: 41	| rtp: 6	| rbp: 0	| Nullary Equ
+rpc: 42	| rtp: 5	| rbp: 0	| Unary FJmp 45
+rpc: 43	| rtp: 4	| rbp: 0	| Unary LoadG 3
+rpc: 44	| rtp: 5	| rbp: 0	| Nullary Write
+rpc: 45	| rtp: 4	| rbp: 0	| Nullary Nop
+rpc: 46	| rtp: 4	| rbp: 0	| Nullary Leave
+rpc: 47	| rtp: 1	| rbp: 0	| Nullary Ret
+rpc: 1	| rtp: 0	| rbp: 0	| Unary Jmp 48
+rpc: 48	| rtp: 0	| rbp: 0	| Nullary Halt
+["0","0","0","0","0","0","0","0","0","0","0","0"]

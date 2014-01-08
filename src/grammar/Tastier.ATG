@@ -14,7 +14,8 @@ COMPILER Tastier
   enum TastierKind : int {  // kinds of symbol
     Var,
     Proc,
-    Constant
+    Constant,
+    Array
   };
 
 /*
@@ -248,6 +249,8 @@ Symbol lookup(Stack<Scope> scopes, string name) {
   manipulate them, you can LoadG and StoG to those locations.
 */
 
+int nextFreeAddress = 0;
+
 /*--------------------------------------------------------------------------*/
 
 CHARACTERS
@@ -297,7 +300,10 @@ Expr<out TastierType type>      (.  TastierType type1; Instruction inst; .)
 
 /*------------------------------------------------------------------------*/
 
-Factor<out TastierType type>    (.  int n; Symbol sym; string name; .)
+Factor<out TastierType type>    (.  
+                                    int n; Symbol sym; string name; 
+				    List<int> indexes = new List<int>();
+                                .)
 =                               (.  type = TastierType.Undefined; .)
   ( Ident<out name>             (.
                                     bool isExternal = false; //CS3071 students can ignore external declarations, since they only deal with compilation of single files.
@@ -310,27 +316,39 @@ Factor<out TastierType type>    (.  int n; Symbol sym; string name; .)
                                     if (sym == null) {
                                       SemErr("reference to undefined variable " + name);
                                     }
-                                    else {
-                                      type = (TastierType)sym.Item3;
-                                      if ((TastierKind)sym.Item2 == TastierKind.Var) {
-                                        if (sym.Item4 == 0) {
-                                            if (isExternal) {
-                                              program.Add(new Instruction("", "LoadG " + sym.Item1));
-                                              // if the symbol is external, we load it by name. The linker will resolve the name to an address.
-                                            } else {
-                                              program.Add(new Instruction("", "LoadG " + (sym.Item5+3)));
-                                            }
-                                        } else {
-                                            int lexicalLevelDifference = Math.Abs(openScopes.Count - sym.Item4)-1;
-                                            program.Add(new Instruction("", "Load " + lexicalLevelDifference + " " + sym.Item5));
-                                        }
-                                      }else if((TastierKind)sym.Item2 == TastierKind.Constant) {
-				        program.Add(new Instruction("", "Const " + (sym.Item4)));
-					program.Add(new Instruction("", "LoadG " + (sym.Item5+3)));
-					program.Add(new Instruction("", "StoG " + (sym.Item5+3)));
-				      } 
-				      else SemErr("variable expected");
-                                    }
+                                .)
+    {
+      '[' Expr<out type>        (.
+                                    indexes.Add(Convert.ToInt32(t.val));
+                                .)
+      ']'                   
+    }
+                                (.
+                                    type = (TastierType)sym.Item3;
+                                    if ((TastierKind)sym.Item2 == TastierKind.Var) {
+                                      if (sym.Item4 == 0) {
+                                          if (isExternal) {
+                                            program.Add(new Instruction("", "LoadG " + sym.Item1));
+                                            // if the symbol is external, we load it by name. The linker will resolve the name to an address.
+                                          } else {
+                                            program.Add(new Instruction("", "LoadG " + (sym.Item5+3)));
+                                          }
+                                      } else {
+                                          int lexicalLevelDifference = Math.Abs(openScopes.Count - sym.Item4)-1;
+                                          program.Add(new Instruction("", "Load " + lexicalLevelDifference + " " + sym.Item5));
+                                      }
+                                    }else if((TastierKind)sym.Item2 == TastierKind.Constant) {
+				      program.Add(new Instruction("", "Const " + (sym.Item4)));
+				      program.Add(new Instruction("", "LoadG " + (sym.Item5+3)));
+				      program.Add(new Instruction("", "StoG " + (sym.Item5+3)));
+				    }else if((TastierKind)sym.Item2 == TastierKind.Array) {
+                                      foreach(int index in indexes) {
+                                        program.Add(new Instruction("", "Const " + index));
+    				        Console.WriteLine("Load Array - Index: "+index);
+			              }
+				      program.Add(new Instruction("", "LoadArray " + (sym.Item5 + 3) + " " + indexes.Count));				 
+				    }
+				    else SemErr("variable expected");
                                 .)
   | number                      (.
                                     n = Convert.ToInt32(t.val);
@@ -453,7 +471,10 @@ SimExpr<out TastierType type>   (.  TastierType type1; Instruction inst; .)
 
 /*------------------------------------------------------------------------*/
 
-Stat                            (.  TastierType type; string name; Symbol sym; bool external = false; bool isExternal = false; .)
+Stat                            (.
+                                    TastierType type; string name; Symbol sym; bool external = false; bool isExternal = false; 
+                                    List<int> indexes = new List<int>(); TastierType type1;
+                                .)
 
 = Ident<out name>               (.
                                     sym = lookup(openScopes, name);
@@ -468,15 +489,20 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                     if ((TastierKind)sym.Item2 == TastierKind.Constant) {
                                       SemErr("cannot assign to a constant");
                                     }
-
                                 .)
+  {
+    '[' Expr<out type1>         (.
+                                    indexes.Add(Convert.ToInt32(t.val));
+                                .)
+    ']'
+  }
   ( ":="                        (.
-                                    if ((TastierKind)sym.Item2 != TastierKind.Var) {
+                                    if ((TastierKind)sym.Item2 != TastierKind.Var && (TastierKind)sym.Item2 != TastierKind.Array) {
                                       SemErr("cannot assign to non-variable");
                                     }
                                 .)
-    Expr<out type>
-    
+    Expr<out type>              
+
     [
     '?'                         (.
                                     if (type != TastierType.Boolean) {
@@ -499,10 +525,18 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
   ';'
                                 (.
                                     if (type != (TastierType)sym.Item3) {
-                                      SemErr("incompatible types");
+                                      //SemErr("incompatable types... type:other..."+type+(TastierKind)sym.Item3);
                                     }
+
                                     if (sym.Item4 == 0) {
-                                      if (isExternal) {
+				      if((TastierKind)sym.Item2 == TastierKind.Array) {
+				        foreach(int index in indexes) {
+                                          program.Add(new Instruction("", "Const " + index));
+    				          Console.WriteLine("Store Array - Index: "+index);
+				        }
+                                        program.Add(new Instruction("", "StoreArray " + (sym.Item5 + 3) + " " + indexes.Count));
+				      }
+                                      else if (isExternal) {
                                         program.Add(new Instruction("", "StoG " + sym.Item1));
                                         // if the symbol is external, we also store it by name. The linker will resolve the name to an address.
                                       } else {
@@ -623,6 +657,10 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
                                   List<Instruction> argumentInstructions = new List<Instruction>(); // holds instructions used to load the switch argument expression
                                   argumentInstructions = program.GetRange(switchArgumentAddress, endOfExprInstructions - switchArgumentAddress);
                                   string switchEnd = generateLabel();                             // generates label used to skip to end of switch when a case is matched
+
+				  foreach(Instruction i in argumentInstructions) {
+				    Console.WriteLine(i);
+				  }
 				.)
     {
       "case" Expr<out type>     (.
@@ -681,7 +719,7 @@ Stat                            (.  TastierType type; string name; Symbol sym; b
 | "write"
   Expr<out type>                (.
                                     if (type != TastierType.Integer) {
-                                      SemErr("integer type expected");
+                                      //SemErr("integer type expected");
                                     }
                                     program.Add(new Instruction("", "Write"));
                                 .)
@@ -783,14 +821,45 @@ ConstDecl                       (.
 
 VarDecl<bool external>          (.
                                     string name; TastierType type; Scope currentScope = openScopes.Peek();
+				    bool isArray = false; // keeps track of whether it is an array or not
+				    List<int> arrayDimensions = new List<int>(); // the size of each array dimension in a list
                                 .)
 = Type<out type>
+  {
+    '[' Expr<out type>          (.
+				    arrayDimensions.Add(Convert.ToInt32(t.val));
+				    isArray = true;
+				.)
+    ']'
+  }
   Ident<out name>               (.
-                                    if (external) {
-                                      externalDeclarations.Push(new Symbol(name, (int)TastierKind.Var, (int)type, 0, 0));
-                                    } else {
-                                      currentScope.Push(new Symbol(name, (int)TastierKind.Var, (int)type, openScopes.Count-1, currentScope.Count(s => s.Item2 == (int)TastierKind.Var)));
-                                    }
+                                    if(isArray) {
+                                      currentScope.Push(new Symbol(name, (int)TastierKind.Array, (int)TastierKind.Array, 0, nextFreeAddress));
+				      int size = 1;
+
+				      Console.WriteLine("Before - nextFreeAddress: "+nextFreeAddress);
+
+				      foreach(int dimension in arrayDimensions) {
+				        Console.WriteLine("Declared Array dimensions: "+dimension);
+                                        program.Add(new Instruction("", "Const " + dimension));
+					program.Add(new Instruction("", "StoG " + (nextFreeAddress + 3)));
+					nextFreeAddress++;
+                                        size *= dimension;
+				      }
+
+				      Console.WriteLine("Declared Array size: "+size);
+				      
+				      nextFreeAddress += size;
+
+				      Console.WriteLine("After - nextFreeAddress: "+nextFreeAddress);
+
+				    } else {
+                                      if (external) {
+                                        externalDeclarations.Push(new Symbol(name, (int)TastierKind.Var, (int)type, 0, 0));
+                                      } else {
+                                        currentScope.Push(new Symbol(name, (int)TastierKind.Var, (int)type, openScopes.Count-1, currentScope.Count(s => s.Item2 == (int)TastierKind.Var)));
+                                      }
+				    }
                                 .)
   { ',' Ident<out name>         (.
                                     if (external) {

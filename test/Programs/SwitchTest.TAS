@@ -3,25 +3,24 @@
 // number, the sum of all integers up to that number
 
 program Test {
-  int i;
   
   void Main() {
-    int limit;
-    limit := 6;
+  int x, y, z;
+  int i;
+  i := 4;
 
-    for(i := 0; i <= limit; i := i + 1)
-      do {
-        write i;
-      }
-
-    write 0, 0, 0, i; 
-  
-    i := i > 0 ? 666 : 667;
-    write i;
-
-    i := i < 0 ? 666 : 667;
-    write i;
-
+    switch (i) {
+      case 1:
+        write 1;
+      case 2:
+        write 2;
+      case 3:
+        write 3;
+      case 4:
+        write 4;
+      default:
+        write 667;
+    }
   }
 }
 

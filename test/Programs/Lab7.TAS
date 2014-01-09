@@ -14,7 +14,7 @@ program Test {
 
   void Main() {
 
-    // instanstiate struct and test
+    // struct test
     struct date myBirthday;
     
     myBirthday.day := 31;
@@ -25,7 +25,6 @@ program Test {
     write myBirthday.month;
     write myBirthday.year;
 
-
     // array testing
     int[4] arr;
 
@@ -34,10 +33,29 @@ program Test {
     arr[2] := 1;
     arr[3] := 4;
 
+    // uncomment to test runtime bounds checking
+    //arr[4] := 5;
+
     write arr[0];
     write arr[1];
     write arr[2];
     write arr[3];
+
+    int[2][2] arr2;
+
+    arr2[0][0] := 0;
+    arr2[0][1] := 1;
+    arr2[1][0] := 2;
+    arr2[1][1] := 3;
+    
+    // uncomment to test runtime bounds checking
+    //arr2[2][1] := 4;
+
+    write arr2[0][0];
+    write arr2[0][1];
+    write arr2[1][0];
+    write arr2[1][1];
+
 
     int printDay, printMonth, printYear;
     printDay := 0;

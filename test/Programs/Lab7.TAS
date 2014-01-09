@@ -1,0 +1,61 @@
+// This is a test program which can be compiled by the TastierCompiler.
+// It reads a sequence of numbers from the input file and computes, for each
+// number, the sum of all integers up to that number
+
+program Test {
+
+  // declare a struct
+  struct date {
+    int day;
+    int month;
+    int year;
+  };
+  
+
+  void Main() {
+
+    // instanstiate struct and test
+    struct date myBirthday;
+    
+    myBirthday.day := 31;
+    myBirthday.month := 7;
+    myBirthday.year := 1993;
+
+    write myBirthday.day;
+    write myBirthday.month;
+    write myBirthday.year;
+
+
+    // array testing
+    int[4] arr;
+
+    arr[0] := 2;
+    arr[1] := 0;
+    arr[2] := 1;
+    arr[3] := 4;
+
+    write arr[0];
+    write arr[1];
+    write arr[2];
+    write arr[3];
+
+    int printDay, printMonth, printYear;
+    printDay := 0;
+    printMonth := 1;
+    printYear := 2;
+
+    // switch testing
+    switch(printMonth) {
+      case printDay:
+        write myBirthday.day;
+      case printMonth:
+        write myBirthday.month;
+      case printYear:
+        write myBirthday.year;
+      default:
+        write -1;
+    }
+
+  }
+}
+

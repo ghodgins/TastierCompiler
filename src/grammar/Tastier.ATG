@@ -15,7 +15,8 @@ COMPILER Tastier
     Var,
     Proc,
     Constant,
-    Array
+    Array,
+    Struct
   };
 
 /*
@@ -251,6 +252,14 @@ Symbol lookup(Stack<Scope> scopes, string name) {
 
 int nextFreeAddress = 0;
 
+
+// Stuff for structs
+// Using symbol for struct members
+// - sym.Item1 = name
+// - sym.Item2 = kind
+// - sym.Item3 = type
+Dictionary<string, Dictionary<string, Symbol>> structDeclarations = new Dictionary<string, Dictionary<string, Symbol>>();
+
 /*--------------------------------------------------------------------------*/
 
 CHARACTERS
@@ -263,7 +272,7 @@ letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".
   AnyButDoubleQuote = CharInLine - '\"'.
 
 TOKENS
-  ident  = letter {letter | digit}.
+  ident  = letter {letter | digit | '.'}.
   number = digit {digit}.
   string = '"' {AnyButDoubleQuote | "\\\""} '"'.
 
@@ -420,7 +429,7 @@ ProcDecl                        (.  string name; string label; Scope currentScop
                                     */
                                 .)
 
-  { VarDecl<external> | Stat |  (.
+  { StructDecl |  VarDecl<external> | Stat |  (.
                                     openLabels.Push(generateLabel());
                                     program.Add(new Instruction("", "Jmp " + openLabels.Peek()));
                                     /*
@@ -732,7 +741,7 @@ Stat                            (.
                                 .)
   } ';'
 
-| '{' { Stat | VarDecl<external> } '}' .
+| '{' { StructDecl | Stat | VarDecl<external> } '}' .
 
 /*------------------------------------------------------------------------*/
 
@@ -742,7 +751,7 @@ Tastier                         (.  string name; bool external = false; .)
                                     openScopes.Push(new Scope());
                                 .)
   '{'
-  { ConstDecl | VarDecl<external> | ProcDecl | ExternDecl }
+  { StructDecl | ConstDecl | VarDecl<external> | ProcDecl | ExternDecl }
   '}'                           (.
                                     if (openScopes.Peek().Count == 0) {
                                       Warn("Warning: Program " + name + " is empty ");
@@ -807,8 +816,6 @@ ConstDecl                       (.
                                     sym = new Symbol(name, (int)TastierKind.Constant, (int)TastierType.Integer, n, currentScope.Count(s => s.Item2 ==
 				    (int)TastierKind.Constant || s.Item2 == (int)TastierKind.Var));
 				    currentScope.Push(sym);
-				    //program.Add(new Instruction("", "Const " + n));
-				    //program.Add(new Instruction("", "StoG 0"));
                                 .)
 
 { ',' Ident<out name>           (.
@@ -816,6 +823,47 @@ ConstDecl                       (.
 				   => s.Item2 == (int)TastierKind.Constant || s.Item2 == (int)TastierKind.Var)));
 				.)
 } ';' .
+
+/*------------------------------------------------------------------------*/
+
+StructDecl                     (.
+                                   string name; string name1; Scope currentScope = openScopes.Peek(); TastierType type; TastierKind kind = TastierKind.Var;
+			       .)
+= "struct" Ident<out name>     
+(
+  (
+    '{'                        (.
+                                  // a member of the struct declared
+				  Console.WriteLine("Struct Declaration: "+name);
+                                  structDeclarations.Add(name, new Dictionary<string, Symbol>());
+                               .)
+       { 
+         Type<out type>        
+	 Ident<out name1>      (.
+	                          Console.WriteLine(name+" member: "+name1);
+                                  structDeclarations[name].Add(name1, new Symbol(name1, (int)kind, (int)type, 0, 0));
+	                       .)
+	 ';'
+       }
+    '}' ';'
+  )
+  
+  | ( Ident<out name1>          (.
+                                  // an actual instance of the struct has been declared 
+				  Console.WriteLine("Struct Instance: "+name1+structDeclarations[name].First().Value.Item3);
+                                  currentScope.Push(new Symbol(name1, (int)TastierKind.Struct, structDeclarations[name].First().Value.Item3, 0, nextFreeAddress));
+                                  nextFreeAddress++;
+                                  
+				  foreach(KeyValuePair<string, Symbol> structMember in structDeclarations[name]) {
+				    Console.WriteLine("Struct foreach: "+name1+"."+structMember.Key);
+                                    currentScope.Push(new Symbol(name1+"."+structMember.Key, (int)kind, structMember.Value.Item2, 0, nextFreeAddress));
+				    nextFreeAddress++;
+				  }
+				  
+			       .)
+      ';'
+    )
+)  .
 
 /*------------------------------------------------------------------------*/
 
@@ -868,7 +916,7 @@ VarDecl<bool external>          (.
                                       currentScope.Push(new Symbol(name, (int)TastierKind.Var, (int)type, openScopes.Count-1, currentScope.Count(s => s.Item2 == (int)TastierKind.Var)));
                                     }
                                 .)
-  } ';'.
+  } ';' .
 
 ExternDecl                      (.  string name; bool external = true; Scope currentScope = openScopes.Peek(); int count = currentScope.Count; .)
 = "external"
